@@ -1,7 +1,7 @@
 # zoddy zsh theme
 
 PROMPT='╭[%{$fg[cyan]%}%~%{$reset_color%}][%{$fg[yellow]%}%*%{$reset_color%}][$(_battery)]
-╰[%{$fg[magenta]%}%?%{$reset_color%}][%{$fg[green]%}$(_git_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}] ♯ '
+╰[%{$fg[magenta]%}%?%{$reset_color%}][%{$fg[green]%}$(_git_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}] %(!.#.$) '
 
 PROMPT2=''
 RPROMPT=''
