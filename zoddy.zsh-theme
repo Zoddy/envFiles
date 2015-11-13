@@ -1,4 +1,3 @@
-~
 # zoddy zsh theme
 
 PROMPT='╭[%{$fg[cyan]%}%~%{$reset_color%}][%{$fg[yellow]%}%*%{$reset_color%}][$(_battery)]
