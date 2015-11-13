@@ -1,3 +1,4 @@
+~
 # zoddy zsh theme
 
 PROMPT='╭[%{$fg[cyan]%}%~%{$reset_color%}][%{$fg[yellow]%}%*%{$reset_color%}][$(_battery)]
@@ -8,7 +9,7 @@ RPROMPT=''
 
 function _battery() {
   power=$(pmset -g batt | sed -n 1,1p)
-  percentage=$(pmset -g batt | grep -o "[0-9]\{3,3\}")
+  percentage=$(pmset -g batt | grep -o "[0-9]\{1,3\}%;" | grep -o "[0-9]\{1,3\}")
 
   if [[ $power == *"AC Power"* ]]; then
     echo -n "%{$fg[green]%}⊕"
