@@ -1,7 +1,7 @@
 # zoddy zsh theme
 
 PROMPT='╭[%{$fg[cyan]%}%~%{$reset_color%}][%{$fg[yellow]%}%*%{$reset_color%}][$(_battery)]
-╰[%{$fg[magenta]%}%?%{$reset_color%}][%{$fg[green]%}$(_git_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}] %(!.#.$) '
+╰[%{$fg[magenta]%}%?%{$reset_color%}]$(_git_info) %(!.#.$) '
 
 PROMPT2=''
 RPROMPT=''
@@ -30,7 +30,8 @@ function _battery() {
 function _git_info() {
   branchname=$(command git symbolic-ref --short HEAD 2> /dev/null) || return
 
-  echo -n "${branchname}"
+  echo -n "[%{$fg[green]%}${branchname}%{$reset_color%}"
+  echo -n "$(git_prompt_status)%{$reset_color%}]"
 }
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%}+"
