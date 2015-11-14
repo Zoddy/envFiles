@@ -17,14 +17,14 @@ function _battery() {
   fi
 
   if [[ percentage -gt 80 ]]; then
-    echo -n "%{$fg[green]%}%{$percentage%}%{$reset_color%}"
+    echo -n "%{$fg[green]%}"
   elif [[ percentage -gt 20 ]]; then
-    echo -n "%{$fg[yellow]%}%{$percentage%}%{$reset_color%}"
+    echo -n "%{$fg[yellow]%}"
   else
-    echo -n "%{$fg[red]%}%{$percentage%}%{$reset_color%}"
+    echo -n "%{$fg[red]%}"
   fi
 
-  echo -n "%{$reset_color%}"
+  echo -n "%{$percentage%}%{$reset_color%}"
 }
 
 function _git_info() {
