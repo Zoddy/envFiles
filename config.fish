@@ -8,7 +8,7 @@ set __fish_git_prompt_char_untrackedfiles '✈'
 
 function _current_dir
   set_color cyan
-  echo -n (string replace $HOME "~" (pwd))
+  echo -ne (string replace $HOME "~" (pwd))
   set_color normal
 end
 
@@ -21,7 +21,7 @@ end
 # prompt
 function fish_prompt
   # first line
-  echo -ne [(_current_dir)]
+  echo -e [(_current_dir)]
 
   # second line
   echo -ne [(_exit_status)]
