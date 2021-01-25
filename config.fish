@@ -13,18 +13,26 @@ function _current_dir
 end
 
 function _exit_status
-  set_color magenta
+  if test $argv[1] -eq 0
+    set_color magenta
+  else
+    set_color red
+  end
+  
   echo -n $status
   set_color normal
 end
 
 # prompt
 function fish_prompt
+  # get last command exit status
+  set last_status $status
+
   # first line
   echo -e [(_current_dir)]
 
   # second line
-  echo -ne [(_exit_status)]
+  echo -ne [(_exit_status $last_status)]
   echo -ne (__fish_git_prompt "[%s]")
   echo ' $ '
 end
